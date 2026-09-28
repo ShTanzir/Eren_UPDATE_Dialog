@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@color/dark">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="#FFFFFF"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Edit Dialog"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_btn_primary"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="20dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- LIVE PREVIEW -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live Preview"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <FrameLayout
+                android:id="@+id/previewRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFD0C8"
+                android:padding="12dp"
+                android:minHeight="220dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="#FFFAFD">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/previewHero"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            android:background="#E8E4E6"
+                            android:contentDescription="hero" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="14dp"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="UPDATE"
+                                android:textSize="11sp"
+                                android:textColor="#292A2D"
+                                android:letterSpacing="0.05" />
+
+                            <TextView
+                                android:id="@+id/previewBrand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MODMASE"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="#353539" />
+
+                            <LinearLayout
+                                android:id="@+id/previewFeatures"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="#FFFAFD"
+                                android:elevation="2dp" />
+
+                            <Button
+                                android:id="@+id/previewUpdateBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="12dp"
+                                android:text="UPDATE"
+                                android:textAllCaps="true"
+                                android:textColor="#050505"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <!-- Editors -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Image URL  (recommended 1200×675 px, 16:9)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="https://... or leave empty"
+                android:inputType="textUri"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Brand Name"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etBrandName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="MODMASE"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Brand Highlight (blue part)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etBrandHighlight"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="MASE"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Features (❖ lines)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etFeature1"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:hint="New Features Available"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etFeature2"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:hint="Previous Bug Fixed"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etFeature3"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:hint="Optional 3rd feature"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="UPDATE Button URL"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etUpdateUrl"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="https://your-apk-download-link"
+                android:inputType="textUri"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Accent Color (hex)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etAccent"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="#70A0DF"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp" />
+
+            <!-- Color presets -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <View android:id="@+id/presetBlue" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+                <View android:id="@+id/presetGreen" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+                <View android:id="@+id/presetPurple" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+                <View android:id="@+id/presetOrange" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+                <View android:id="@+id/presetRed" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+                <View android:id="@+id/presetTeal" android:layout_width="36dp" android:layout_height="36dp" android:layout_margin="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Background Color (hex)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <EditText
+                android:id="@+id/etBg"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:hint="#FFD0C8"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="14dp" />
+
+            <View android:layout_width="1dp" android:layout_height="40dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
