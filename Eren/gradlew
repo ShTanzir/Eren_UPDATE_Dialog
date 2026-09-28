@@ -1,8 +1,0 @@
-#!/bin/sh
-# Gradle start script (CI will use gradle wrapper if missing)
-DIR="$(cd "$(dirname "$0")" && pwd)"
-if command -v gradle >/dev/null 2>&1; then
-  exec gradle -p "$DIR" "$@"
-fi
-echo "Please install Gradle or run from GitHub Actions"
-exit 1
