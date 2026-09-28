@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "apps": {
+      ".read": true,
+      ".write": true
+    },
+    "adminKeys": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
