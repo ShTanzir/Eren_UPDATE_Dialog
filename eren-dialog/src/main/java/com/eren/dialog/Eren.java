@@ -240,7 +240,7 @@ public final class Eren {
         if (parts.length==2) {
             android.text.SpannableString s = new android.text.SpannableString(rawName);
             int cut = parts[0].length()+1;
-            s.setSpan(new android.text.style.ForegroundColorSpan(accent), cut, rawName.length(), 0);
+            s.setSpan(new android.text.style.ForegroundColorSpan(Color.parseColor(accent)), cut, rawName.length(), 0);
             title.setText(s);
         }
         content.addView(title, new LinearLayout.LayoutParams(-1, dp(a, 68)));
